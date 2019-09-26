@@ -19,7 +19,7 @@ value1 = driver.find_element_by_xpath("//*[@id='mc_mainWrapper']/div[3]/div[2]/d
 
 if value1 == 'Mar 19':
    for i in range(5,tablerows-6):
-     for j in range(2,7):
+     for j in range(1,7):
          value = driver.find_element_by_xpath("//table[@class='table4']/tbody/tr[" + str(i) + "]/td[" + str(j) + "]").text
          if (value == 'CURRENT LIABILITIES' or value == 'NON-CURRENT LIABILITIES' or
              value == 'ASSETS' or value == 'NON-CURRENT ASSETS' or
