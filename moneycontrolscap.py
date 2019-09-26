@@ -12,6 +12,7 @@ tablecol = len(driver.find_elements_by_xpath("//table[@class='table4']/tbody/tr[
 #list = driver.find_elements_by_xpath("//*[@class='table4']")
 #list = driver.find_elements_by_xpath("//*[@id="mc_mainWrapper"]/div[3]/div[2]/div[3]/div[2]/div[2]/div[2]/div[1]/table[2]/tbody/tr")
 print (tablerows,tablecol)
+#just for checking add in the comment.
 
 #value2 =  driver.find_element_by_xpath("//table[@class='table4']/tbody/tr[1]/td[0]").text
 value1 = driver.find_element_by_xpath("//*[@id='mc_mainWrapper']/div[3]/div[2]/div[3]/div[2]/div[2]/div[2]/div[1]/table[2]/tbody/tr[1]/td[2]").text
