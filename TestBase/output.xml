@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.2 (Python 3.7.4 on win32)" generated="20191030 13:14:24.402" rpa="false">
+<suite id="s1" name="api tc11 googlemapAPI" source="D:\SeleniumPython\TestBase\api_tc11_googlemapAPI.robot">
+<test id="s1-t1" name="TC for Google map places api">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20191030 13:14:24.569" level="INFO">Creating Session using : alias=mysession, url=https://maps.googleapis.com, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20191030 13:14:24.569" endtime="20191030 13:14:24.569"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>location=-33.8670522,151.1957362</arg>
+<arg>radius=500</arg>
+<arg>types=food</arg>
+<arg>name=harbour</arg>
+<arg>key=AIzaSyA9EZlyJnUXWL2waTrH-84CA1xxcv3UWAc</arg>
+</arguments>
+<assign>
+<var>${param}</var>
+</assign>
+<msg timestamp="20191030 13:14:24.570" level="INFO">${param} = {'location': '-33.8670522,151.1957362', 'radius': '500', 'types': 'food', 'name': 'harbour', 'key': 'AIzaSyA9EZlyJnUXWL2waTrH-84CA1xxcv3UWAc'}</msg>
+<status status="PASS" starttime="20191030 13:14:24.570" endtime="20191030 13:14:24.570"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>${request_url}</arg>
+<arg>params=${param}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20191030 13:14:24.725" level="INFO">Get Request using : alias=mysession, uri=/maps/api/place/nearbysearch/xml?, headers=None json=None</msg>
+<msg timestamp="20191030 13:14:24.725" level="INFO">c:\users\powerbull\pycharmprojects\seleniumtest\venv\lib\site-packages\urllib3\connectionpool.py:851: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20191030 13:14:24.726" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20191030 13:14:24.571" endtime="20191030 13:14:24.726"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20191030 13:14:24.727" endtime="20191030 13:14:24.727"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20191030 13:14:24.728" endtime="20191030 13:14:24.729"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20191030 13:14:24.729" endtime="20191030 13:14:24.730"></status>
+</kw>
+<status status="PASS" starttime="20191030 13:14:24.568" endtime="20191030 13:14:24.731" critical="yes"></status>
+</test>
+<doc>google map api https://www.youtube.com/watch?v=Y4POpfJbDKs&amp;list=PLUDwpEzHYYLvMLbma_Rp-6jrrpxkeH0VJ&amp;index=12</doc>
+<status status="PASS" starttime="20191030 13:14:24.403" endtime="20191030 13:14:24.732"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="api tc11 googlemapAPI">api tc11 googlemapAPI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

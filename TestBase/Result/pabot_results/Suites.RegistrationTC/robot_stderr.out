@@ -1,0 +1,2 @@
+[ ERROR ] Error in file 'C:\Users\revat\seleniumtest\seleniumtest\TestBase\RegistrationTC.robot': Setting 'Documentation' used multiple times.
+[ ERROR ] Error in file 'C:\Users\revat\seleniumtest\seleniumtest\Resource\Registration.robot': Setting 'Documentation' used multiple times.
